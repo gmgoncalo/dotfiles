@@ -1,0 +1,79 @@
+{
+    "catppuccin.accentColor": "lavender",
+    "catppuccin.customUIColors": {
+        "mocha": {
+            "statusBar.foreground": "accent"
+        }
+    },
+    "editor.fontFamily": "FiraCode Nerd Font",
+    "editor.fontLigatures": true,
+    "window.titleBarStyle": "custom",
+    "[cpp]": {
+        "editor.wordBasedSuggestions": "off",
+        "editor.suggest.insertMode": "replace",
+        "editor.semanticHighlighting.enabled": true,
+        "editor.formatOnSave": true,
+    },
+    "C_Cpp.files.exclude": {
+        "**/.vscode": true,
+        "**/.vs": true
+    },
+    "C_Cpp.formatting": "clangFormat",
+    "C_Cpp.clang_format_style": "llvm",
+    "workbench.iconTheme": "material-icon-theme",
+    "[python]": {
+        "editor.defaultFormatter": "ms-python.black-formatter",
+        "editor.formatOnSave": true,
+    },
+    "isort.args": [
+        "--profile",
+        "black"
+    ],
+    "[lex]": {
+        "editor.fontLigatures": false
+    },
+    "editor.minimap.enabled": false,
+    "terminal.integrated.defaultProfile.linux": "zsh",
+    "terminal.integrated.profiles.linux": {
+        "bash": {
+            "path": "bash",
+            "icon": "terminal-bash"
+        },
+        "zsh": {
+            "path": "zsh"
+        },
+        "fish": {
+            "path": "fish"
+        },
+        "tmux": {
+            "path": "tmux",
+            "icon": "terminal-tmux"
+        },
+        "pwsh": {
+            "path": "pwsh",
+            "icon": "terminal-powershell"
+        },
+        "zsh (2)": {
+            "path": "/usr/bin/zsh"
+        }
+    },
+    "terminal.external.linuxExec": "kitty",
+    "github.copilot.enable": {
+        "*": true,
+        "plaintext": false,
+        "markdown": false,
+        "scminput": false,
+        "zig": false
+    },
+    "editor.formatOnSave": true,
+    "diffEditor.hideUnchangedRegions.enabled": true,
+    "workbench.editorAssociations": {
+        "*.sqlite3": "default"
+    },
+    "zig.path": "",
+    "zig.zls.path": "",
+    "zig.initialSetupDone": true,
+    "redhat.telemetry.enabled": false,
+    "github.copilot.editor.enableAutoCompletions": true,
+    "workbench.colorTheme": "Catppuccin Mocha"
+}

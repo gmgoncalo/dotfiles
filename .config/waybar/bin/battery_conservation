@@ -1,0 +1,27 @@
+#!/bin/sh
+
+STATE="$(cat /sys/bus/platform/drivers/ideapad_acpi/VPC2004:00/conservation_mode)"
+
+toggle() {
+    if [ "$STATE" == "1" ]; then
+        echo 0 > /sys/bus/platform/drivers/ideapad_acpi/VPC2004:00/conservation_mode
+        STATE="0"
+    else
+        echo 1 > /sys/bus/platform/drivers/ideapad_acpi/VPC2004:00/conservation_mode
+        STATE="1"
+    fi
+}
+
+print_state() {
+    if [ "$STATE" == "1" ]; then
+        echo "{\"tooltip\": \"Battery Conservation ON\",\"class\": \"on\"}"
+    else
+        echo "{\"tooltip\": \"Battery Conservation OFF\",\"class\": \"off\"}"
+    fi
+}
+
+if [ "$1" == "--toggle" ]; then
+    toggle
+fi
+
+print_state
