@@ -74,6 +74,5 @@
     "zig.zls.path": "",
     "zig.initialSetupDone": true,
     "redhat.telemetry.enabled": false,
-    "github.copilot.editor.enableAutoCompletions": true,
-    "workbench.colorTheme": "Catppuccin Mocha"
+    "github.copilot.editor.enableAutoCompletions": true
 }
