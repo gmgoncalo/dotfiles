@@ -113,6 +113,7 @@
                 " "
             ]
         },
+        "on-click": "pavucontrol",
         "scroll-step": 2,
         "smooth-scrolling-threshold": 1,
         "tooltip": false

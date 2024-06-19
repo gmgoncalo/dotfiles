@@ -1,0 +1,3 @@
+# Ignore vs code folder except configs
+Code
+!Code/User/settings.json
