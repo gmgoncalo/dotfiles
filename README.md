@@ -17,7 +17,6 @@ cd Graphite-gtk-theme
 ```
 
 ## TODO
-* rofi
 * wlogout
 * hyprlock
 * better vs code theme?
