@@ -167,10 +167,11 @@
         "signal": 8
     },
     "memory": {
-        "format": " {}% "
+        "format": " {}% ",
+        "interval": 5
     },
     "cpu": {
         "format": " {usage}%",
-        "on-click": "foot btop"
+        "interval": 5
     }
 }

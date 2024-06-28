@@ -74,5 +74,6 @@
     "zig.zls.path": "",
     "zig.initialSetupDone": true,
     "redhat.telemetry.enabled": false,
-    "github.copilot.editor.enableAutoCompletions": true
+    "github.copilot.editor.enableAutoCompletions": true,
+    "go.toolsManagement.autoUpdate": true
 }
