@@ -70,8 +70,8 @@
     "workbench.editorAssociations": {
         "*.sqlite3": "default"
     },
-    "zig.path": "",
-    "zig.zls.path": "",
+    "zig.path": "zig",
+    "zig.zls.path": "zls",
     "zig.initialSetupDone": true,
     "redhat.telemetry.enabled": false,
     "github.copilot.editor.enableAutoCompletions": true,

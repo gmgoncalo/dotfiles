@@ -43,6 +43,3 @@ source $ZSH/oh-my-zsh.sh
 
 # Compilation flags
 # export ARCHFLAGS="-arch x86_64"
-
-# Alias
-alias dotfiles='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
