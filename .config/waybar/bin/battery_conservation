@@ -3,6 +3,7 @@
 STATE="$(cat /sys/bus/platform/drivers/ideapad_acpi/VPC2004:00/conservation_mode)"
 
 toggle() {
+    chmod +002 /sys/bus/platform/drivers/ideapad_acpi/VPC2004:00/conservation_mode
     if [ "$STATE" == "1" ]; then
         echo 0 > /sys/bus/platform/drivers/ideapad_acpi/VPC2004:00/conservation_mode
         STATE="0"
@@ -10,6 +11,7 @@ toggle() {
         echo 1 > /sys/bus/platform/drivers/ideapad_acpi/VPC2004:00/conservation_mode
         STATE="1"
     fi
+    chmod -002 /sys/bus/platform/drivers/ideapad_acpi/VPC2004:00/conservation_mode
 }
 
 print_state() {
