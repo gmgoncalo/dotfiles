@@ -1,38 +1,19 @@
 {
-    "catppuccin.accentColor": "lavender",
-    "catppuccin.customUIColors": {
-        "mocha": {
-            "statusBar.foreground": "accent"
-        }
-    },
+    // Window
+    "window.titleBarStyle": "custom",
+    // Font
     "editor.fontFamily": "FiraCode Nerd Font",
     "editor.fontLigatures": true,
-    "window.titleBarStyle": "custom",
-    "[cpp]": {
-        "editor.wordBasedSuggestions": "off",
-        "editor.suggest.insertMode": "replace",
-        "editor.semanticHighlighting.enabled": true,
-        "editor.formatOnSave": true,
-    },
-    "C_Cpp.files.exclude": {
-        "**/.vscode": true,
-        "**/.vs": true
-    },
-    "C_Cpp.formatting": "clangFormat",
-    "C_Cpp.clang_format_style": "llvm",
+    // Theme
     "workbench.iconTheme": "material-icon-theme",
-    "[python]": {
-        "editor.defaultFormatter": "ms-python.black-formatter",
-        "editor.formatOnSave": true,
-    },
-    "isort.args": [
-        "--profile",
-        "black"
-    ],
-    "[lex]": {
-        "editor.fontLigatures": false
-    },
+    // Editor settings
+    "editor.formatOnSave": true,
     "editor.minimap.enabled": false,
+    "diffEditor.hideUnchangedRegions.enabled": true,
+    "workbench.editorAssociations": {
+        "*.sqlite3": "default"
+    },
+    // Editor terminal
     "terminal.integrated.defaultProfile.linux": "zsh",
     "terminal.integrated.profiles.linux": {
         "bash": {
@@ -58,22 +39,26 @@
         }
     },
     "terminal.external.linuxExec": "kitty",
+    // Copilot
     "github.copilot.enable": {
-        "*": true,
-        "plaintext": false,
-        "markdown": false,
-        "scminput": false,
-        "zig": false
+        "*": false,
     },
-    "editor.formatOnSave": true,
-    "diffEditor.hideUnchangedRegions.enabled": true,
-    "workbench.editorAssociations": {
-        "*.sqlite3": "default"
-    },
+    // Zig
     "zig.path": "zig",
     "zig.zls.path": "zls",
     "zig.initialSetupDone": true,
     "redhat.telemetry.enabled": false,
-    "github.copilot.editor.enableAutoCompletions": true,
-    "go.toolsManagement.autoUpdate": true
+    "go.toolsManagement.autoUpdate": true,
+    // Python
+    "[python]": {
+        "editor.defaultFormatter": "ms-python.black-formatter",
+        "editor.formatOnSave": true,
+    },
+    "isort.args": [
+        "--profile",
+        "black"
+    ],
+    // C/C++
+    "C_Cpp.formatting": "clangFormat",
+    "C_Cpp.clang_format_style": "llvm",
 }
