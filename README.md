@@ -1,6 +1,5 @@
 # dotfiles
 
-
 ## Themes
 Install the icons
 ```
@@ -17,6 +16,4 @@ cd Graphite-gtk-theme
 ```
 
 ## TODO
-* wlogout
 * hyprlock
-* better vs code theme?
