@@ -2,30 +2,48 @@
   //---- Bar
   "layer": "top",
   "spacing": 10,
-  "modules-left": ["clock", "hyprland/workspaces", "hyprland/window"],
+  "modules-left": [
+    "clock",
+    "hyprland/workspaces",
+    "hyprland/window"
+  ],
   "modules-right": [
     "tray",
     "group/scripts",
     "group/scroll",
     "group/wireless",
-    "group/hardware",
+    "group/hardware"
   ],
   //---- Groups
   "group/scripts": {
     "orientation": "horizontal",
-    "modules": ["custom/battery_conservation", "custom/night_light"],
+    "modules": [
+      "custom/battery_conservation",
+      "custom/night_light"
+    ]
   },
   "group/scroll": {
     "orientation": "horizontal",
-    "modules": ["pulseaudio#mic", "pulseaudio", "backlight"],
+    "modules": [
+      "pulseaudio#mic",
+      "pulseaudio",
+      "backlight"
+    ]
   },
   "group/wireless": {
     "orientation": "horizontal",
-    "modules": ["bluetooth", "network"],
+    "modules": [
+      "bluetooth",
+      "network"
+    ]
   },
   "group/hardware": {
     "orientation": "horizontal",
-    "modules": ["battery", "cpu", "memory"],
+    "modules": [
+      "battery",
+      "cpu",
+      "memory"
+    ]
   },
   //---- Modules
   "hyprland/workspaces": {
@@ -40,25 +58,35 @@
       "7": "",
       "8": "",
       "9": "",
-      "default": "",
-    },
+      "default": ""
+    }
   },
   "clock": {
     "format": " {:%H:%M}",
     "format-alt": "{:%A, %B %d, %Y}",
-    "tooltip": false,
+    "tooltip": false
   },
   "tray": {
     "spacing": 10,
-    "icon-size": 12,
+    "icon-size": 12
   },
   "backlight": {
     "device": "intel_backlight",
     "format": "{icon} {percent}%",
-    "format-icons": ["", "", "", "", "", "", "", "", ""],
+    "format-icons": [
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      ""
+    ],
     "scroll-step": 2,
     "smooth-scrolling-threshold": 1,
-    "tooltip": false,
+    "tooltip": false
   },
   "pulseaudio#mic": {
     "format": "{format_source}",
@@ -67,40 +95,60 @@
     "on-click": "pactl set-source-mute 0 toggle",
     "on-scroll-down": "pactl set-source-volume 0 -2%",
     "on-scroll-up": "pactl set-source-volume 0 +2%",
-    "smooth-scrolling-threshold": 1,
+    "smooth-scrolling-threshold": 1
   },
   "pulseaudio": {
     "format": "{icon}{volume}%",
     "format-muted": " ",
     "format-icons": {
       "headphone": " ",
-      "default": [" ", " ", "󰕾 ", "󰕾 ", "󰕾 ", " ", " ", " "],
+      "default": [
+        " ",
+        " ",
+        "󰕾 ",
+        "󰕾 ",
+        "󰕾 ",
+        " ",
+        " ",
+        " "
+      ]
     },
     "on-click": "pavucontrol",
     "scroll-step": 2,
     "smooth-scrolling-threshold": 1,
-    "tooltip": false,
+    "tooltip": false
   },
   "bluetooth": {
     "format": "", // Hide the bluetooth icon if no devices are connected
     "format-connected": "{num_connections}",
     "format-connected-battery": "{device_battery_percentage}%",
     "tooltip-format-connected": "{device_alias}",
-    "tooltip-format-connected-battery": "{device_alias}\t{device_battery_percentage}%",
+    "tooltip-format-connected-battery": "{device_alias}\t{device_battery_percentage}%"
   },
   "network": {
     "format": "{ifname}",
     "format-wifi": " {essid}",
     "format-ethernet": "{ipaddr}/{cidr} 󰈁",
     "format-disconnected": "󰖪 ",
-    "tooltip-format": "{essid}\t{bandwidthDownBytes}",
+    "tooltip-format": "{essid}\t{bandwidthDownBytes}"
   },
   "battery": {
     "format": "{icon}{capacity}%",
-    "format-icons": ["󰁺", "󰁼", "󰁽", "󰁽", "󰁿", "󰂀", "󰂀", "󰂁", "󰂁", "󰁹"],
+    "format-icons": [
+      "󰁺",
+      "󰁼",
+      "󰁽",
+      "󰁽",
+      "󰁿",
+      "󰂀",
+      "󰂀",
+      "󰂁",
+      "󰂁",
+      "󰁹"
+    ],
     "format-charging": "󰂄{capacity}%",
     "tooltip-format": "{timeTo}\n{capacity} % | {power} W",
-    "interval": 1,
+    "interval": 1
   },
   "custom/night_light": {
     "format": "",
@@ -108,7 +156,7 @@
     "exec": "~/.config/waybar/bin/night_light",
     "on-click": "~/.config/waybar/bin/night_light --toggle; pkill -SIGRTMIN+7 waybar",
     "interval": "once",
-    "signal": 7,
+    "signal": 7
   },
   "custom/battery_conservation": {
     "format": "󱈑",
@@ -116,14 +164,14 @@
     "exec": "~/.config/waybar/bin/battery_conservation",
     "on-click": "pkexec ~/.config/waybar/bin/battery_conservation --toggle; pkill -SIGRTMIN+8 waybar",
     "interval": "once",
-    "signal": 8,
+    "signal": 8
   },
   "memory": {
     "format": " {}% ",
-    "interval": 5,
+    "interval": 5
   },
   "cpu": {
     "format": " {usage}%",
-    "interval": 5,
-  },
+    "interval": 5
+  }
 }
