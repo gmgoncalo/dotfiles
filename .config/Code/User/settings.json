@@ -1,64 +1,80 @@
 {
-    // Window
-    "window.titleBarStyle": "custom",
-    // Font
-    "editor.fontFamily": "FiraCode Nerd Font",
-    "editor.fontLigatures": true,
-    // Theme
-    "workbench.iconTheme": "material-icon-theme",
-    // Editor settings
-    "editor.formatOnSave": true,
-    "editor.minimap.enabled": false,
-    "diffEditor.hideUnchangedRegions.enabled": true,
-    "workbench.editorAssociations": {
-        "*.sqlite3": "default"
+  // Window
+  "window.titleBarStyle": "custom",
+  // Font
+  "editor.fontFamily": "FiraCode Nerd Font",
+  "editor.fontLigatures": true,
+  // Theme
+  "workbench.iconTheme": "material-icon-theme",
+  // Editor settings
+  "editor.formatOnSave": true,
+  "editor.minimap.enabled": false,
+  "workbench.editorAssociations": {
+    "*.sqlite3": "default"
+  },
+  // Editor terminal
+  "terminal.integrated.defaultProfile.linux": "zsh",
+  "terminal.integrated.profiles.linux": {
+    "bash": {
+      "path": "bash",
+      "icon": "terminal-bash"
     },
-    // Editor terminal
-    "terminal.integrated.defaultProfile.linux": "zsh",
-    "terminal.integrated.profiles.linux": {
-        "bash": {
-            "path": "bash",
-            "icon": "terminal-bash"
-        },
-        "zsh": {
-            "path": "zsh"
-        },
-        "fish": {
-            "path": "fish"
-        },
-        "tmux": {
-            "path": "tmux",
-            "icon": "terminal-tmux"
-        },
-        "pwsh": {
-            "path": "pwsh",
-            "icon": "terminal-powershell"
-        },
-        "zsh (2)": {
-            "path": "/usr/bin/zsh"
-        }
+    "zsh": {
+      "path": "zsh"
     },
-    "terminal.external.linuxExec": "kitty",
-    // Copilot
-    "github.copilot.enable": {
-        "*": false,
+    "fish": {
+      "path": "fish"
     },
-    // Zig
-    "zig.path": "zig",
-    "zig.zls.path": "zls",
-    "zig.initialSetupDone": true,
-    "redhat.telemetry.enabled": false,
-    "go.toolsManagement.autoUpdate": true,
-    // Python
-    "[python]": {
-        "editor.defaultFormatter": "ms-python.black-formatter",
-        "editor.formatOnSave": true,
+    "tmux": {
+      "path": "tmux",
+      "icon": "terminal-tmux"
     },
-    "isort.args": [
-        "--profile",
-        "black"
-    ],
-    // C/C++
-    "C_Cpp.formatting": "clangFormat",
-    "C_Cpp.clang_format_style": "llvm",
+    "pwsh": {
+      "path": "pwsh",
+      "icon": "terminal-powershell"
+    },
+    "zsh (2)": {
+      "path": "/usr/bin/zsh"
+    }
+  },
+  "terminal.external.linuxExec": "kitty",
+  // Copilot
+  "github.copilot.enable": {
+    "*": false,
+    "plaintext": false,
+    "markdown": false,
+    "scminput": false,
+    "python": false
+  },
+  // Zig
+  "zig.path": "zig",
+  "zig.zls.path": "zls",
+  "redhat.telemetry.enabled": false,
+  "go.toolsManagement.autoUpdate": true,
+  // Python
+  "[python]": {
+    "editor.defaultFormatter": "ms-python.black-formatter",
+    "editor.formatOnSave": true
+  },
+  "isort.args": ["--profile", "black"],
+  // C/C++
+  "C_Cpp.formatting": "clangFormat",
+  "C_Cpp.clang_format_style": "llvm",
+  "liveServer.settings.donotShowInfoMsg": true,
+  "explorer.fileNesting.patterns": {
+    "*.ts": "${capture}.js",
+    "*.js": "${capture}.js.map, ${capture}.min.js, ${capture}.d.ts",
+    "*.jsx": "${capture}.js",
+    "*.tsx": "${capture}.ts",
+    "tsconfig.json": "tsconfig.*.json",
+    "package.json": "package-lock.json, yarn.lock, pnpm-lock.yaml, bun.lockb",
+    "*.sqlite": "${capture}.${extname}-*",
+    "*.db": "${capture}.${extname}-*",
+    "*.sqlite3": "${capture}.${extname}-*",
+    "*.db3": "${capture}.${extname}-*",
+    "*.sdb": "${capture}.${extname}-*",
+    "*.s3db": "${capture}.${extname}-*"
+  },
+  "svelte.enable-ts-plugin": true,
+  "python.defaultInterpreterPath": "/bin/python"
 }
