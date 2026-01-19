@@ -1,0 +1,20 @@
+{
+    "panel": {
+        "title": "Czasomierz",
+        "countdown": "Odliczanie",
+        "stopwatch": "Stoper",
+        "start": "Start",
+        "pause": "Pauza",
+        "resume": "Wznów",
+        "reset": "Resetuj",
+        "settings": "Ustawienia widżetu"
+    },
+    "toast": {
+        "title": "Czasomierz",
+        "finished": "Czasomierz zakończony!"
+    },
+    "settings": {
+        "compact-mode": "Tryb kompaktowy",
+        "compact-mode-desc": "Ukryj okrągły pasek postępu dla czystszego wyglądu"
+    }
+}
