@@ -11,5 +11,47 @@
     }
   ],
   "current_page_id": 0,
-  "isExpanded": false
+  "isExpanded": false,
+  "useCustomColors": false,
+  "priorityColors": {
+    "high": {
+      "r": 1,
+      "g": 0.7058823704719543,
+      "b": 0.6705882549285889,
+      "a": 1,
+      "hsvHue": 0.01786111108958721,
+      "hsvSaturation": 0.3294117748737335,
+      "hsvValue": 1,
+      "hslHue": 0.01786111108958721,
+      "hslSaturation": 1,
+      "hslLightness": 0.8352941274642944,
+      "valid": true
+    },
+    "medium": {
+      "r": 1,
+      "g": 1,
+      "b": 1,
+      "a": 1,
+      "hsvHue": -1,
+      "hsvSaturation": 0,
+      "hsvValue": 1,
+      "hslHue": -1,
+      "hslSaturation": 0,
+      "hslLightness": 1,
+      "valid": true
+    },
+    "low": {
+      "r": 0.7764706015586853,
+      "g": 0.7764706015586853,
+      "b": 0.7764706015586853,
+      "a": 1,
+      "hsvHue": -1,
+      "hsvSaturation": 0,
+      "hsvValue": 0.7764706015586853,
+      "hslHue": -1,
+      "hslSaturation": 0,
+      "hslLightness": 0.7764706015586853,
+      "valid": true
+    }
+  }
 }

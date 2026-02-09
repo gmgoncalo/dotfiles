@@ -12,7 +12,8 @@
     "start-recording": "屏幕录像（开始录制）",
     "started": "已开始录制。",
     "stop-recording": "屏幕录像（停止录制）",
-    "stopping": "停止录制…"
+    "stopping": "停止录制…",
+    "open-file": "打开文件"
   },
   "name": "屏幕录制器",
   "settings": {
@@ -38,6 +39,8 @@
       "output-folder-description": "屏幕录制将保存到的文件夹",
       "show-cursor": "显示光标",
       "show-cursor-description": "在视频中录制鼠标光标",
+      "hide-when-inactive": "非活动时隐藏",
+      "hide-when-inactive-description": "未录制时隐藏栏指示器",
       "title": "常规"
     },
     "title": "屏幕录制器设置",

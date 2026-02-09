@@ -9,7 +9,7 @@ import qs.Modules.Bar.Extras
 import qs.Services.UI
 import qs.Widgets
 
-Rectangle {
+Item {
   id: root
 
   property var pluginApi: null
@@ -18,8 +18,13 @@ Rectangle {
   property string widgetId: ""
   property string section: ""
 
-  readonly property string barPosition: Settings.data.bar.position
+  // Bar positioning properties
+  readonly property string screenName: screen ? screen.name : ""
+  readonly property string barPosition: Settings.getBarPositionForScreen(screenName)
   readonly property bool isVertical: barPosition === "left" || barPosition === "right"
+  readonly property real barHeight: Style.getBarHeightForScreen(screenName)
+  readonly property real capsuleHeight: Style.getCapsuleHeightForScreen(screenName)
+  readonly property real barFontSize: Style.getBarFontSizeForScreen(screenName)
 
   property bool micActive: false
   property bool camActive: false
@@ -35,8 +40,11 @@ Rectangle {
   property bool removeMargins: cfg.removeMargins ?? defaults.removeMargins
   property int iconSpacing: cfg.iconSpacing || Style.marginXS
 
-  readonly property color activeColor: Color.mPrimary
-  readonly property color inactiveColor: Qt.alpha(Color.mOnSurfaceVariant, 0.3)
+  property string activeColorKey: cfg.activeColor ?? defaults.activeColor
+  property string inactiveColorKey: cfg.inactiveColor ?? defaults.inactiveColor
+
+  readonly property color activeColor: Color.resolveColorKey(activeColorKey)
+  readonly property color inactiveColor: inactiveColorKey === "none" ? Qt.alpha(Color.mOnSurfaceVariant, 0.3) : Color.resolveColorKey(inactiveColorKey)
   readonly property color micColor: micActive ? activeColor : inactiveColor
   readonly property color camColor: camActive ? activeColor : inactiveColor
   readonly property color scrColor: scrActive ? activeColor : inactiveColor
@@ -44,12 +52,14 @@ Rectangle {
   readonly property bool isVisible: !hideInactive || micActive || camActive || scrActive
 
   property real margins: removeMargins ? 0 : Style.marginM * 2
-  implicitWidth: isVertical ? Style.capsuleHeight : Math.round(layout.implicitWidth + margins)
-  implicitHeight: isVertical ? Math.round(layout.implicitHeight + margins) : Style.capsuleHeight
+
+  readonly property real contentWidth: isVertical ? Style.capsuleHeight : Math.round(layout.implicitWidth + margins)
+  readonly property real contentHeight: isVertical ? Math.round(layout.implicitHeight + margins) : Style.capsuleHeight
+
+  implicitWidth: contentWidth
+  implicitHeight: contentHeight
 
   Layout.alignment: Qt.AlignVCenter
-  radius: Style.radiusM
-  color: Style.capsuleColor
   visible: root.isVisible
   opacity: root.isVisible ? 1.0 : 0.0
 
@@ -221,21 +231,18 @@ Rectangle {
     return parts.length > 0 ? parts.join("\n") : "";
   }
 
-  MouseArea {
-    anchors.fill: parent
-    acceptedButtons: Qt.RightButton
-    hoverEnabled: true
+  Rectangle {
+    id: visualCapsule
+    x: Style.pixelAlignCenter(parent.width, width)
+    y: Style.pixelAlignCenter(parent.height, height)
+    width: root.contentWidth
+    height: root.contentHeight
+    radius: Style.radiusM
+    color: Style.capsuleColor
+    border.color: Style.capsuleBorderColor
+    border.width: Style.capsuleBorderWidth
 
-    onEntered: {
-      var tooltipText = buildTooltip();
-      if (tooltipText) {
-        TooltipService.show(root, tooltipText, BarService.getTooltipDirection());
-      }
-    }
-    onExited: TooltipService.hide()
-  }
-
-  Item {
+    Item {
       id: layout
 
       anchors.verticalCenter: parent.verticalCenter
@@ -245,29 +252,70 @@ Rectangle {
       implicitHeight: iconsLayout.implicitHeight
 
       GridLayout {
-          id: iconsLayout
+        id: iconsLayout
 
-          columns: root.isVertical ? 1 : 3
-          rows: root.isVertical ? 3 : 1
+        columns: root.isVertical ? 1 : 3
+        rows: root.isVertical ? 3 : 1
 
-          rowSpacing: root.iconSpacing
-          columnSpacing: root.iconSpacing
+        rowSpacing: root.iconSpacing
+        columnSpacing: root.iconSpacing
 
-          NIcon {
-              visible: micActive || !root.hideInactive
-              icon: micActive ? "microphone" : "microphone-off"
-              color: root.micColor
-          }
-          NIcon {
-              visible: camActive || !root.hideInactive
-              icon: camActive ? "camera" : "camera-off"
-              color: root.camColor
-          }
-          NIcon {
-              visible: scrActive || !root.hideInactive
-              icon: scrActive ? "screen-share" : "screen-share-off"
-              color: root.scrColor
-          }
+        NIcon {
+          visible: micActive || !root.hideInactive
+          icon: micActive ? "microphone" : "microphone-off"
+          color: root.micColor
+        }
+        NIcon {
+          visible: camActive || !root.hideInactive
+          icon: camActive ? "camera" : "camera-off"
+          color: root.camColor
+        }
+        NIcon {
+          visible: scrActive || !root.hideInactive
+          icon: scrActive ? "screen-share" : "screen-share-off"
+          color: root.scrColor
+        }
       }
+    }
+  }
+
+  NPopupContextMenu {
+    id: contextMenu
+
+    model: [
+      {
+        "label": pluginApi?.tr("menu.settings"),
+        "action": "settings",
+        "icon": "settings"
+      },
+    ]
+
+    onTriggered: function (action) {
+      contextMenu.close();
+      PanelService.closeContextMenu(screen);
+      if (action === "settings") {
+        BarService.openPluginSettings(root.screen, pluginApi.manifest);
+      }
+    }
+  }
+
+  MouseArea {
+    anchors.fill: parent
+    acceptedButtons: Qt.RightButton
+    hoverEnabled: true
+
+    onClicked: function (mouse) {
+      if (mouse.button === Qt.RightButton) {
+        PanelService.showContextMenu(contextMenu, root, screen);
+      }
+    }
+
+    onEntered: {
+      var tooltipText = buildTooltip();
+      if (tooltipText) {
+        TooltipService.show(root, tooltipText, BarService.getTooltipDirection());
+      }
+    }
+    onExited: TooltipService.hide()
   }
 }

@@ -9,10 +9,11 @@
     "not-installed": "gpu-screen-recorder not installed.",
     "not-installed-desc": "Please install gpu-screen-recorder to use screen recording features.",
     "saved": "Recording saved.",
-    "start-recording": "Screen recorder (start recording)",
+    "start-recording": "Screen Recorder (start recording)",
     "started": "Recording started.",
-    "stop-recording": "Screen recorder (stop recording)",
-    "stopping": "Stopping recording…"
+    "stop-recording": "Screen Recorder (stop recording)",
+    "stopping": "Stopping recording…",
+    "open-file": "Open file"
   },
   "name": "Screen Recorder",
   "settings": {
@@ -34,6 +35,8 @@
     "general": {
       "copy-to-clipboard": "Copy to clipboard",
       "copy-to-clipboard-description": "Copy the file to clipboard after recording finishes.",
+      "hide-when-inactive": "Hide when inactive",
+      "hide-when-inactive-description": "Hide the bar indicator when not recording",
       "output-folder": "Output folder",
       "output-folder-description": "Folder where screen recordings will be saved",
       "show-cursor": "Show cursor",

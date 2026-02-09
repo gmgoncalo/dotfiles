@@ -1,20 +1,20 @@
 {
-    "panel": {
-        "title": "Timer",
-        "countdown": "Countdown",
-        "stopwatch": "Stopwatch",
-        "start": "Start",
-        "pause": "Pause",
-        "resume": "Resume",
-        "reset": "Reset",
-        "settings": "Widget Settings"
-    },
-    "toast": {
-        "title": "Timer",
-        "finished": "Timer finished!"
-    },
-    "settings": {
-        "compact-mode": "Compact Mode",
-        "compact-mode-desc": "Hide the circular progress bar for a cleaner look"
-    }
+  "panel": {
+    "countdown": "Countdown",
+    "pause": "Pause",
+    "reset": "Reset",
+    "resume": "Resume",
+    "settings": "Widget Settings",
+    "start": "Start",
+    "stopwatch": "Stopwatch",
+    "title": "Timer"
+  },
+  "settings": {
+    "compact-mode": "Compact Mode",
+    "compact-mode-desc": "Hide the circular progress bar for a cleaner look"
+  },
+  "toast": {
+    "finished": "Timer finished!",
+    "title": "Timer"
+  }
 }

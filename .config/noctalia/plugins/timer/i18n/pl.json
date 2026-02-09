@@ -1,20 +1,20 @@
 {
-    "panel": {
-        "title": "Czasomierz",
-        "countdown": "Odliczanie",
-        "stopwatch": "Stoper",
-        "start": "Start",
-        "pause": "Pauza",
-        "resume": "Wznów",
-        "reset": "Resetuj",
-        "settings": "Ustawienia widżetu"
-    },
-    "toast": {
-        "title": "Czasomierz",
-        "finished": "Czasomierz zakończony!"
-    },
-    "settings": {
-        "compact-mode": "Tryb kompaktowy",
-        "compact-mode-desc": "Ukryj okrągły pasek postępu dla czystszego wyglądu"
-    }
+  "panel": {
+    "countdown": "Odliczanie",
+    "pause": "Pauza",
+    "reset": "Resetuj",
+    "resume": "Wznów",
+    "settings": "Ustawienia widżetu",
+    "start": "Start",
+    "stopwatch": "Stoper",
+    "title": "Czasomierz"
+  },
+  "settings": {
+    "compact-mode": "Tryb kompaktowy",
+    "compact-mode-desc": "Ukryj okrągły pasek postępu dla czystszego wyglądu"
+  },
+  "toast": {
+    "finished": "Czasomierz zakończony!",
+    "title": "Czasomierz"
+  }
 }
